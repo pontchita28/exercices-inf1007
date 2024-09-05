@@ -3,6 +3,9 @@
 
 def majuscule(mot):
     # TODO completer la fonction ici
+    # utiliser fonction ord pour transformer les caractères en ASCIII       
+    
+
     return mot
 
 
