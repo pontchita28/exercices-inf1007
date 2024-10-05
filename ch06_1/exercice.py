@@ -3,19 +3,55 @@
 
 
 def order(values: list = None) -> list:
+    # TODO: demander les valeurs ici
+    # demander les valeurs à l'utilisateur 
+    # peuvent être n'importe quelles valeurs 
+    # sort la liste
+        # sorted retourne une autre liste et ne
+        # modifie pas la liste originale
     if values is None:
-        # TODO: demander les valeurs ici
-        pass
+        values = []
+        while len(values) < 10:
+            valeurs = input("Veuillez entrer quelque chose: ")
+            values.append(valeurs)
 
-    return []
+        print(values)
+
+        # mettre la liste en ordre 
+        # utilisation de sort 
+        ord_values = sorted(values)
+            
+        return ord_values
 
 
 def anagrams(words: list = None) -> bool:
-    if words is None:
-        # TODO: demander les mots ici
-        pass
+    # TODO: demander les mots ici
 
-    return False
+    # anagrammes: si on veut réarannger les mots 
+    # pour former un autre 
+
+    # pour les avoir: mettre les mots dans une liste
+    # et sort les deux listes
+    # si elles sont les mêmes vraies 
+    # sinon, faux
+
+    if words is None:
+        mot1 = input("Veuillez entrer le premier mot: ")
+        mot2 = input("Veuillez entrer le deuxième mot: ")
+
+        # transformation des mots en listes 
+        mot1_liste = list(mot1)
+        mot2_liste = list(mot2)
+
+        # mettre les lettres du mots en ordre 
+        mot1_ord = sorted(mot1_liste)
+        mot2_ord = sorted(mot2_liste)
+
+        if mot1_ord == mot2_ord:
+            return True
+        else:
+            return False
+
 
 
 def contains_doubles(items: list) -> bool:

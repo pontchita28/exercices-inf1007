@@ -13,23 +13,37 @@ def square(a: float) -> float:
 
 
 def average(a: float, b: float, c: float) -> float:
-    return sum(a, b, c) / 3
+    return (a + b + c) / 3
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    # conversion des angles degrés en rad 
+    angle_deg_rad = math.trunc(math.radians(angle_degs))
+    difference_deg = angle_degs - angle_deg_rad
+    angle_min_rad = math.radians(difference_deg)
+    difference_min = angle_mins - angle_min_rad
+    angle_sec_rad = math.radians(difference_min)
+
+    total = angle_deg_rad + angle_min_rad + angle_sec_rad
+
+    return total 
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+    angle_rad_deg = (angle_rads * 180)/ math.pi
+    angle_min_deg = angle_rads * 10800 / math.pi
+    angle_min_sec = angle_rads * 64800 / math.pi
+    return angle_rad_deg, angle_min_deg, angle_min_sec
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
+    farenheit = (temperature - 32) / 1.8
+    return farenheit
 
 
 def to_farenheit(temperature: float) -> float:
-    return 0.0
+    farenheit = (temperature * 1.8) + 32 
+    return farenheit
 
 
 def main() -> None:
