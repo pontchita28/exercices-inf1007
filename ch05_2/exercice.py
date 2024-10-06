@@ -9,10 +9,28 @@ def get_bill(name, data):
 	INDEX_QUANTITY = 1
 	INDEX_PRICE = 2
 
-	return ""
+	# calculer le total de l'achat 
+	sous_total = 0
+	i = 0
+	for b in range(i, len(data)):
+		sous_total = round((sous_total + data[b][INDEX_QUANTITY] * data[b][INDEX_PRICE]),2)
+
+	# calcul des taxes 
+	taxes = float(round((sous_total * 0.15),2))
+
+	# calcul du total 
+	total = float(round((sous_total + taxes),2))
+
+	# affichage de la facture 
+	facture = f"{name}\nSOUS TOTAL     {sous_total} $\nTAXES           {taxes} $\nTOTAL          {total} $"
+
+	return facture
+
 
 def format_number(number, num_decimal_digits):
 	return ""
+
+
 
 def get_triangle(num_rows):
 		
